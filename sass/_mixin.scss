@@ -1,0 +1,73 @@
+// colculate rem (width or margin or..)
+@function rem($pixels) {
+  @return $pixels / $base-font-size + rem;
+}
+
+@mixin rem($propertie, $value) {
+  #{$propertie}: $value;
+  #{$propertie}: calculateRem($value);
+}
+// Breakpoint for media request
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1440px;
+@mixin placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+// pseudoclass mixin.
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+// font size colculate rem only!
+@mixin font-size(
+  $base-font-size,
+  $line-height: normal,
+  $letter-spacing: normal
+) {
+  font-size: $base-font-size / 16 * 1rem;
+  @if $line-height==normal {
+    line-height: normal;
+  } @else {
+    line-height: $line-height / $font-size;
+  }
+
+  @if $letter-spacing==normal {
+    letter-spacing: normal;
+  } @else {
+    letter-spacing: #{$letter-spacing / $font-size}em;
+  }
+}
+//logo mixin
+@mixin logo(
+  $width: 170px,
+  $display: flex,
+  $justify-content: center,
+  $align-item: center,
+  $text-decoration: none,
+  $text-transform: capitalize
+) {
+  width: $width;
+  display: $display;
+  align-items: $align-item;
+  justify-content: $justify-content;
+  text-decoration: $text-decoration;
+  text-transform: $text-transform;
+}

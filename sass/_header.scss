@@ -1,0 +1,161 @@
+@import "../sass/base";
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 100;
+  right: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: rem(40px);
+  width: 100%;
+}
+
+.logo-link {
+  @include logo(rem(185px));
+  color: $text-color;
+  &:hover {
+    color: $logo-hover--color;
+    transition: color 0.2s linear;
+  }
+  &:active {
+    color: $text-active-color;
+    transition: color 0.2s linear;
+  }
+
+  .logo-icon {
+    fill: currentColor;
+  }
+  .logo-txt {
+    font-family: $font-family--ralereg;
+    font-size: rem(34px);
+    font-weight: $font-weight--ralereg;
+  }
+}
+
+.menu-icon {
+  display: none;
+}
+
+.navbar {
+  @include font-size(14);
+  text-transform: capitalize;
+  font-weight: $font-weight--monts;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.navbar-item {
+  color: $text-color;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 rem(15px);
+  &:hover {
+    color: $text-hover--color;
+    transition: color 0.2s linear;
+  }
+  &:active {
+    color: $text-active-color;
+    transition: color 0.2s linear;
+  }
+}
+
+.navbar-mobile-link {
+  .navbar-item {
+    margin-right: rem(5px);
+  }
+  .navbar-item-logo {
+    fill: currentColor;
+    width: rem(18px);
+
+    &:active {
+      animation: 0.5s ease-in-out 0s one;
+    }
+  }
+}
+
+.search-box {
+  position: relative;
+  margin-bottom: rem(5px);
+}
+.input {
+  width: rem(22px);
+  height: rem(22px);
+  background: none;
+  border-radius: 50%;
+  border: rem(2px) solid $text-color;
+  box-sizing: border-box;
+  outline: none;
+  transition: width 0.2s ease-in-out, border-radius 0.4s ease-in-out,
+    padding 0.2s;
+  transition-delay: 0.2s;
+  color: $text-color;
+}
+.inclicked {
+  width: rem(250px);
+  border: rem(2px) solid $text-color;
+  border-radius: rem(50px);
+  padding: 0 rem(10px);
+}
+.search-btn {
+  width: rem(22px);
+  height: rem(22px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &::before {
+    content: "";
+    width: rem(2px);
+    height: rem(10px);
+    background: $text-color;
+    position: absolute;
+    transform: rotate(-45deg);
+    bottom: rem(-5px);
+    right: -1px;
+    box-sizing: border-box;
+    transition: 0.3s;
+  }
+}
+.close {
+  &::before,
+  &::after {
+    content: "";
+    width: rem(2px);
+    height: rem(14px);
+    background: $text-color;
+    position: absolute;
+    bottom: rem(4px);
+    right: rem(10px);
+    box-sizing: border-box;
+  }
+  &::before {
+    transform: rotate(-45deg);
+  }
+  &::after {
+    transform: rotate(45deg);
+  }
+}

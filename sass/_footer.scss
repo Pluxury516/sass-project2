@@ -1,0 +1,337 @@
+@import "../sass/base";
+.footer {
+  width: 100%;
+  margin: rem(80px) 0 0 0;
+  position: relative;
+}
+
+.footer-top {
+  height: rem(490px);
+  background-image: url(../img/footerbgtop.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-top-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.footer-top-icon {
+  margin-right: 90px;
+  width: 12%;
+  transform: scale(0);
+  transition: all 0.5s ease 0s;
+  &:nth-child(4) {
+    margin: 0;
+  }
+}
+
+.footer-top-icon.active-anim {
+  transform: scale(1);
+}
+
+.footer-bot {
+  width: 100%;
+  height: rem(618px);
+  background-color: #191919;
+  position: relative;
+}
+
+.footer-bot-container {
+  width: 100%;
+  padding-top: rem(80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-bot-logo-link {
+  @include logo(185px);
+  color: $text-color;
+  &:hover {
+    color: $logo-hover--color;
+    transition: color 0.2s linear;
+  }
+
+  .footer-logo-icon {
+    fill: currentColor;
+  }
+  .footer-logo-txt {
+    font-family: $font-family--ralereg;
+    @include font-size(34);
+    font-weight: $font-weight--ralereg;
+  }
+}
+
+.footer-bot-column-1 {
+  width: 15%;
+  margin-right: rem(30px);
+}
+
+.footer-bot-column-1-txt {
+  max-width: rem(270px);
+  font-size: rem(14px);
+  line-height: rem(24px);
+  color: $text-heading--color;
+  margin: rem(30px) 0 rem(25px) 0;
+}
+
+.footer-bot-column-1-link {
+  text-decoration: none;
+  font-size: rem(14px);
+  color: $text-color;
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: rem(85px);
+  &::before {
+    @include pseudo(block, absolute, "");
+    background-image: url(../img/footer-link.png);
+    width: rem(4px);
+    height: rem(7px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 100%;
+    right: auto;
+    top: 29%;
+  }
+}
+
+.footer-bot-column-1-link:hover {
+  color: $text-hover--color;
+}
+
+.footer-bot-column-1-link:hover::before {
+  background-image: url(../img/readmore.png);
+}
+
+.footer-bot-column-2 {
+  margin-top: rem(28px);
+  width: 15%;
+  margin-right: rem(30px);
+}
+.footer-bot-column-2-title {
+  font-family: $font-family--ralebold;
+  font-weight: $font-weight--ralebold;
+  color: $text-color;
+  font-size: rem(24px);
+}
+
+.recent-post-info {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.recent-post-info-date {
+  font-size: rem(12px);
+  line-height: rem(20px);
+  color: #363636;
+  margin: rem(20px) 0 0 0;
+}
+
+.recent-post-info-txt {
+  margin: rem(5px) 0 0 0;
+  color: $text-heading--color;
+  font-size: rem(14px);
+  max-width: rem(270px);
+}
+
+.recent-post-info-line {
+  opacity: 0.1;
+  margin: rem(20px) 0 0 0;
+  color: $text-color;
+  max-width: rem(269px);
+}
+
+.recent-post-info:hover .recent-post-info-date {
+  color: $text-color;
+}
+
+.recent-post-info:hover .recent-post-info-txt {
+  color: $text-hover--color;
+  &:active {
+    color: $text-active-color;
+  }
+}
+
+.recent-post-info:active .recent-post-info-line {
+  opacity: 1;
+}
+
+.footer-bot-column-3 {
+  margin-top: rem(28px);
+  width: 15%;
+  margin-right: rem(30px);
+}
+
+.footer-bot-column-3-title {
+  font-family: $font-family--ralebold;
+  font-weight: $font-weight--ralebold;
+  color: $text-color;
+  font-size: rem(24px);
+}
+
+.our-twitter-info {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.our-twitter-info-txt {
+  color: $text-heading--color;
+  font-size: rem(14px);
+  max-width: rem(270px);
+  margin: rem(20px) 0 0 0;
+}
+
+.twitter-info-waxom {
+  text-decoration: none;
+  color: #01b7e9;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.twitter-info-link {
+  text-decoration: none;
+  color: #7c7c7c;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.our-twitter-info-time-ago {
+  font-size: rem(12px);
+  line-height: rem(20px);
+  color: #363636;
+  margin: rem(5px) 0 0 0;
+}
+
+.our-twitter-info:hover .our-twitter-info-time-ago {
+  color: $text-color;
+}
+
+.our-twitter-info:hover .our-twitter-info-txt {
+  color: $text-hover--color;
+  &:active {
+    color: $text-active-color;
+  }
+}
+
+.our-twitter-info:active .recent-post-info-line {
+  opacity: 1;
+}
+
+.footer-bot-column-4 {
+  max-width: rem(280px);
+}
+
+.footer-bot-column-4-title {
+  font-family: $font-family--ralebold;
+  font-weight: $font-weight--ralebold;
+  color: $text-color;
+  font-size: rem(24px);
+}
+
+.drible-info-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: rem(26px);
+  overflow-x: hidden;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.drible-info-1 {
+  height: 98px;
+  margin-bottom: rem(10px);
+  margin-right: rem(10px);
+  cursor: pointer;
+  &:hover {
+    filter: brightness(20%);
+  }
+  &:active {
+    filter: brightness(10%);
+  }
+}
+
+.footer-waxom-info {
+  width: 100%;
+  background-color: #111111;
+  height: rem(111px);
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-waxom-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  margin-right: rem(50px);
+}
+
+.footer-waxom-info-container-flex-1 {
+  display: flex;
+  width: rem(611px);
+  align-items: center;
+}
+
+.footer-copy-link {
+  position: relative;
+  font-size: rem(13px);
+  color: $text-heading--color;
+  text-decoration: none;
+  margin-left: rem(20px);
+  a {
+    text-decoration: none;
+    color: #959595;
+    &:hover {
+      color: $icon-hover--color;
+    }
+  }
+  &:first-child:hover {
+    cursor: default;
+    color: $text-heading--color;
+  }
+  &:hover {
+    color: $icon-hover--color;
+  }
+  &::before {
+    @include pseudo(block, absolute, "");
+    border-left: 1px solid #252525;
+    height: rem(13px);
+    left: auto;
+    right: rem(-10px);
+  }
+}
+
+.footer-copy-link:last-child::before {
+  border: none;
+}
+
+.footer-waxom-info-container-flex-2 {
+  display: flex;
+  width: rem(320px);
+  align-items: center;
+}
+
+.footer-copy-link-evato {
+  position: relative;
+  font-size: rem(13px);
+  color: $text-heading--color;
+  text-decoration: none;
+  margin-left: rem(20px);
+  a {
+    text-decoration: none;
+    color: #959595;
+    &:hover {
+      color: $icon-hover--color;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import "variables";
+@font-face {
+   font-family: montserrat-light;
+   src: url(../font/montserrat-light.woff2);
+   src: url(../font/montserrat-light.woff);
+   src: url(../font/montserrat-light.otf);
+   font-weight: $font-weight--monts;
+   font-style: $font-style--monts;
+}
+@font-face {
+   font-family:raleway-regular;
+   src: url(../font/raleway-regular.woff2);
+   src: url(../font/raleway-regular.woff);
+   src: url(../font/raleway-regular.ttf);
+   font-weight: $font-weight--ralereg;
+   font-style: $font-style--ralereg;
+}
+@font-face{
+   font-family: raleway-medium;
+   src: url(../font/raleway-medium.woff2);
+   src: url(../font/raleway-medium.woff);
+   src: url(../font/raleway-medium.ttf);
+   font-weight: $font-weight--ralemed;
+   font-style: $font-style--ralemed;
+}
+@font-face{
+   font-family: raleway-extrabold;
+   src: url(../font/raleway-extrabold.woff2);
+   src: url(../font/raleway-extrabold.woff);
+   src: url(../font/raleway-extrabold.ttf);
+   font-weight:$font-weight--extrabold;
+   font-style: $font-style--extrabold;
+}
+@font-face{
+   font-family: raleway-semibold;
+   src: url(../font/raleway-semibold.woff2);
+   src: url(../font/raleway-semibold.woff);
+   src: url(../font/raleway-semibold.ttf);
+   font-weight:$font-weight--semibold;
+   font-style: $font-style--semibold;
+}
+
+@font-face{
+   font-family: raleway-bold;
+   src: url(../font/ralewaybold.woff2);
+   src: url(../font/ralewaybold.woff);
+   src: url(../font/ralewaybold.ttf);
+   font-weight:$font-weight--ralebold;
+   font-style: $font-style--ralebold;
+}

@@ -1,0 +1,172 @@
+@import "../sass/base";
+.carusel-area,
+.carusel-single-banner {
+  height: 100vh;
+}
+.carusel-single-banner {
+  position: relative;
+  .carusel-img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .carusel-img img {
+    width: 100%;
+    height: 100vh;
+  }
+  .carusel-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+
+  .carusel-h2 {
+    font-family: $font-family--ralereg;
+    font-size: rem(36px);
+    color: $text-color;
+    font-weight: $font-weight--ralereg;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .carusel-h1 {
+    font-family: $font-family-raleextra;
+    font-size: rem(52px);
+    color: $text-color;
+    font-weight: $font-weight--extrabold;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+.carusel-p {
+  font-size: $base-font-size;
+  font-weight: $font-style--monts;
+  line-height: rem(24px);
+  color: $text-color;
+  margin: rem(14px) auto;
+  text-align: center;
+  max-width: rem(570px);
+}
+.carusel-title-button {
+  font-family: $font-family-raleextra;
+  font-size: rem(14px);
+  font-weight: $font-weight--extrabold;
+  width: rem(170px);
+  height: rem(53px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: rem(32px) auto;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: $btn-color;
+  border-radius: rem(3px);
+  color: $text-color;
+  box-shadow: 0 3px 0 #736357;
+  &:hover {
+    background: rgba(0, 0, 0, 0);
+    color: $btn-color;
+    box-shadow: inset 0 0 0 rem(3px) $btn-color;
+    transition: 0.2s linear;
+  }
+  &:active {
+    transition: background 0.2s;
+    background-color: $btn-color;
+    background-size: 100%;
+    color: $text-color;
+  }
+}
+.carusel-area .dots-style {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: rem(25px);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+  button {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    font-size: 0;
+    width: rem(14px);
+    height: rem(14px);
+    background-color: $carusel-item--color;
+    border: none;
+    border-radius: 50%;
+    margin: rem(10px);
+    cursor: pointer;
+    &:hover {
+      background-color: $btn-color;
+    }
+  }
+}
+.carusel-area .dots-style li[class="slick-active"] button {
+  background-color: transparent;
+  border: 1px solid #d3c1ad;
+  transform: scale(1.2);
+}
+.carusel-area .slick-arrow {
+  position: absolute;
+  top: 50%;
+  margin: rem(-20px) 0px 0px 0px;
+  z-index: 10;
+  font-size: 0;
+  width: rem(40px);
+  height: rem(40px);
+}
+.carusel-area .slick-arrow.slick-prev {
+  cursor: pointer;
+  left: rem(100px);
+  background: none;
+  display: block;
+  width: rem(40px);
+  height: rem(40px);
+  border: none;
+  border-bottom: rem(2px) solid $carusel-item--color;
+  border-left: rem(2px) solid $carusel-item--color;
+  transform: rotate(45deg);
+  &:hover {
+    border-bottom: rem(2px) solid $btn-color;
+    border-left: rem(2px) solid $btn-color;
+    transition: all 0.5s;
+  }
+  &:active {
+    border-bottom: rem(2px) solid $text-color;
+    border-left: rem(2px) solid $text-color;
+    transition: all 0.3s;
+  }
+}
+
+.carusel-area .slick-arrow.slick-next {
+  cursor: pointer;
+  right: rem(100px);
+  background: none;
+  display: block;
+  width: rem(40px);
+  height: rem(40px);
+  border: none;
+  border-top: rem(2px) solid $carusel-item--color;
+  border-right: rem(2px) solid $carusel-item--color;
+  transform: rotate(45deg);
+  &:hover {
+    border-top: rem(2px) solid $btn-color;
+    border-right: rem(2px) solid $btn-color;
+    transition: all 0.3s;
+  }
+  &:active {
+    border-top: rem(2px) solid $text-color;
+    border-right: rem(2px) solid $text-color;
+    transition: all 0.3s;
+  }
+}
