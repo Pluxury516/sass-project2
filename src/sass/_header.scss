@@ -54,7 +54,7 @@
 }
 
 .navbar {
-  @include font-size(14);
+  font-size: rem(14px);
   text-transform: capitalize;
   font-weight: $font-weight--monts;
   display: flex;

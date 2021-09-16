@@ -64,7 +64,7 @@
   }
   .footer-logo-txt {
     font-family: $font-family--ralereg;
-    @include font-size(34);
+    font-size: rem(34px);
     font-weight: $font-weight--ralereg;
   }
 }

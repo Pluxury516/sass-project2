@@ -1,6 +1,8 @@
+@use "sass:list";
+@use "sass:math";
 // colculate rem (width or margin or..)
 @function rem($pixels) {
-  @return $pixels / $base-font-size + rem;
+   @return math.div($pixels , $base-font-size) + rem;
 }
 
 @mixin rem($propertie, $value) {
