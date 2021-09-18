@@ -14,6 +14,8 @@ const uglify = require('gulp-uglify-es').default;
 const imagemin = require('gulp-imagemin-fix');
 const webp = require("gulp-webp");
 const imageminWebp = require ("imagemin-webp");
+const gutil = require("gulp-util");
+const ftp = require ("vinyl-ftp")
 
 const styles = () => {
 	return src('./src/sass/**/*.scss')
@@ -123,6 +125,8 @@ exports.watchFiles = watchFiles;
 exports.fileinclude = htmlInclude;
 exports.default = series( clean, parallel (htmlInclude, scripts, imgToApp,), styles, watchFiles);
 
+
+// Build version
 const scriptsBuild = () => {
 	return src('./src/js/**/*.js') 
 		.pipe(webpackStream({
@@ -169,4 +173,30 @@ const stylesBuild = () => {
 		.pipe(dest('./dist/css/'))
 }
 
-exports.build = series( clean, parallel (htmlInclude, scriptsBuild, imgToApp,), stylesBuild, watchFiles);
+exports.build = series( clean, parallel (htmlInclude, scriptsBuild, imgToApp,), stylesBuild,);
+
+
+
+// deploy version
+const deploy = () => {
+	let conn = ftp.create({
+		host: '',
+		user: '',
+		password: '',
+		parallel: 10,
+		log: gutil.log
+	});
+
+	let globs = [
+		'dist/**',
+	];
+
+	return src(globs, {
+			base: './dist',
+			buffer: false
+		})
+		.pipe(conn.newer('')) // only upload newer files
+		.pipe(conn.dest(''));
+}
+
+exports.deploy = deploy;
